@@ -51,14 +51,39 @@ set: --enable-admission-plugins to something that does not include AlwaysAdmit
 in: /etc/kubernetes/manifests/kube-apiserver.yaml
 
 [FAIL] 1.1.11 Ensure that the admission control plugin AlwaysPullImages is set (Scored)
-
+default: AlwaysPullImages is not set
+set: --enable-admission-plugins to a parameter to includes AlwaysPullImages e.g. --enable-admission-plugins=...,AlwaysPullImages,...
+in: /etc/kubernetes/manifests/kube-apiserver.yaml
 
 [FAIL] 1.1.12 Ensure that the admission control plugin DenyEscalatingExec is set (Scored)
+default: DenyEscalatingExec is not set
+set: --enable-admission-pluginsparameter to a value that includes DenyEscalatingExec. e.g. --enable-admission-plugins=...,DenyEscalatingExec,...
+in: /etc/kubernetes/manifests/kube-apiserver.yaml
+
 [FAIL] 1.1.13 Ensure that the admission control plugin SecurityContextDeny is set (Scored)
+default: SecurityContextDeny is not set
+set: --enable-admission-pluginsparameter to include SecurityContextDeny. e.g. --enable-admission-plugins=...,SecurityContextDeny,...
+in: /etc/kubernetes/manifests/kube-apiserver.yaml
+
 [PASS] 1.1.14 Ensure that the admission control plugin NamespaceLifecycle is set (Scored)
+default: NamespaceLifecycle is set
+--disable-admission-pluginsparameter to ensure it does not include NamespaceLifecycle.
+in: /etc/kubernetes/manifests/kube-apiserver.yaml
+
 [FAIL] 1.1.15 Ensure that the --audit-log-path argument is set as appropriate (Scored)
+default: auditing is not enabled.
+set: --audit-log-pathparameter to a suitable path e.g. --audit-log-path=/var/log/apiserver/audit.log
+in: /etc/kubernetes/manifests/kube-apiserver.yaml
+
 [FAIL] 1.1.16 Ensure that the --audit-log-maxage argument is set to 30 or as appropriate (Scored)
+default: auditing is not enabled
+set: --audit-log-maxage argument to 30 or as appropriate
+in: /etc/kubernetes/manifests/kube-apiserver.yaml
+
 [FAIL] 1.1.17 Ensure that the --audit-log-maxbackup argument is set to 10 or as appropriate (Scored)
+
+
+
 [FAIL] 1.1.18 Ensure that the --audit-log-maxsize argument is set to 100 or as appropriate (Scored)
 [PASS] 1.1.19 Ensure that the --authorization-mode argument is not set to AlwaysAllow (Scored)
 [PASS] 1.1.20 Ensure that the --token-auth-file parameter is not set (Scored)
