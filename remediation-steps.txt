@@ -51,6 +51,8 @@ set: --enable-admission-plugins to something that does not include AlwaysAdmit
 in: /etc/kubernetes/manifests/kube-apiserver.yaml
 
 [FAIL] 1.1.11 Ensure that the admission control plugin AlwaysPullImages is set (Scored)
+
+
 [FAIL] 1.1.12 Ensure that the admission control plugin DenyEscalatingExec is set (Scored)
 [FAIL] 1.1.13 Ensure that the admission control plugin SecurityContextDeny is set (Scored)
 [PASS] 1.1.14 Ensure that the admission control plugin NamespaceLifecycle is set (Scored)
